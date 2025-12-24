@@ -1,0 +1,213 @@
+/* Medical Professional Theme */
+.medical-professional {
+    --primary-gradient: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+    --secondary-gradient: linear-gradient(135deg, #7E57C2 0%, #512DA8 100%);
+    --accent-gradient: linear-gradient(135deg, #29B6F6 0%, #0277BD 100%);
+    --success-gradient: linear-gradient(135deg, #66BB6A 0%, #388E3C 100%);
+    
+    --shadow-medical: 0 8px 32px rgba(233, 30, 99, 0.15);
+    --shadow-deep: 0 15px 35px rgba(33, 33, 33, 0.1);
+    
+    --border-medical: 1px solid rgba(233, 30, 99, 0.2);
+    --border-light: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Professional Medical Cards */
+.med-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow-medical);
+    border: var(--border-medical);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.med-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.med-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(233, 30, 99, 0.1);
+}
+
+.med-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--deep-pink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ECG Animation Header */
+.ecg-header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ecg-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        white 20px,
+        white 40px
+    );
+    animation: ecg-scroll 2s linear infinite;
+}
+
+@keyframes ecg-scroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 0; }
+}
+
+/* Medical Status Indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.status-online {
+    background: rgba(102, 187, 106, 0.15);
+    color: #2E7D32;
+}
+
+.status-offline {
+    background: rgba(244, 67, 54, 0.15);
+    color: #C62828;
+}
+
+.status-studying {
+    background: rgba(233, 30, 99, 0.15);
+    color: #AD1457;
+}
+
+/* Medical Progress Bar */
+.med-progress {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.med-progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+/* Medical Badges */
+.med-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+/* Professional Medical Dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.dashboard-stat {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Medical File Upload */
+.med-upload {
+    border: 2px dashed var(--medical-pink);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    background: rgba(233, 30, 99, 0.02);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.med-upload:hover {
+    background: rgba(233, 30, 99, 0.05);
+    border-color: var(--deep-pink);
+}
+
+/* Medical Timeline */
+.med-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.med-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--medical-pink);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--medical-pink);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+}
